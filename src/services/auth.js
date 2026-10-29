@@ -1,7 +1,8 @@
 const { createHash, randomBytes, randomUUID } = require('node:crypto');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const sql = require('mssql/msnodesqlv8');
+// const sql = require('mssql/msnodesqlv8');
+const sql = require('mssql');
 const { getPool } = require('../db');
 
 const issuer = 'customers-api';

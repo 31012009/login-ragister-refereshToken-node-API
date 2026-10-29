@@ -1,4 +1,5 @@
-const sql = require('mssql/msnodesqlv8');
+// const sql = require('mssql/msnodesqlv8');
+const sql = require('mssql');
 
 const server = process.env.DB_SERVER || 'localhost\\SQLEXPRESS';
 const configuredPort = process.env.DB_PORT;
