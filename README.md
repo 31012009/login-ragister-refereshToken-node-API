@@ -26,10 +26,13 @@ CORS preflight is enabled for the API's JSON and bearer-token requests, and
 credentialed requests are allowed for these configured origins. Requests without
 an `Origin` header, such as server-to-server calls, are unaffected.
 
-The default connection uses `ODBC Driver 17 for SQL Server`, server
-`localhost\SQLEXPRESS`, and database `MyDatabase`. Update `DB_DRIVER`,
-`DB_SERVER`, `DB_DATABASE`, or `PORT` in `.env` if needed. No SQL username or
-password is used; access is granted to the current Windows account.
+The default connection uses `ODBC Driver 17 for SQL Server`, database
+`MyDatabase`, and Windows Integrated Authentication. For a local SQL Server
+instance, the API explicitly uses Shared Memory (`lpc:`), which does not require
+TCP/IP or SQL Browser. For a remote server or an explicit TCP connection, enable
+TCP/IP on SQL Server, set `DB_SERVER` to the host without an instance name, and
+set `DB_PORT` to the SQL Server TCP port. Update `DB_DRIVER`, `DB_DATABASE`, or
+`PORT` in `.env` if needed.
 
 ## Endpoints
 
